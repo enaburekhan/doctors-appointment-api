@@ -10,9 +10,10 @@ class UsersController < ApplicationController
       render json: { failure: user.errors.full_messages }, status: :not_acceptable
     end
   end
-    
-  private  
+
+  private
+
   def user_params
     params.permit(:username, :password, :age)
-  end    
+  end
 end

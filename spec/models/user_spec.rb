@@ -15,5 +15,4 @@ RSpec.describe User, type: :model do
   # end
   # it { should validate_presence_of(:password) }
   # it { should validate_presence_of(:age) }
-  
 end

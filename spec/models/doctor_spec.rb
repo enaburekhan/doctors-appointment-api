@@ -7,7 +7,7 @@ RSpec.describe Doctor, type: :model do
 
   # ensure Doctor model has a m:m relationship with the user model
   it { should have_many(:users).through(:appointments) }
-  
+
   # Validation tests
   # ensure columns are present before saving
   it { should validate_presence_of(:name) }
