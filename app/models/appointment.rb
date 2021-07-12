@@ -1,6 +1,6 @@
 class Appointment < ApplicationRecord
   belongs_to :doctor
-  belongs_to :appointment
+  belongs_to :user
 
 
   # validation
