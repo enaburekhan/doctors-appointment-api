@@ -9,10 +9,7 @@ RSpec.describe User, type: :model do
   it { should have_many(:doctors).through(:appointments) }
   # Validation tests
   # ensure columns are present before saving
-  # it { should validate_presence_of(:username) }
-  # it 'should validates presence of username' do
-  #   expect(:username).not_to be(falsy)
-  # end
-  # it { should validate_presence_of(:password) }
-  # it { should validate_presence_of(:age) }
+  it { should validate_presence_of(:username) }
+  it { should validate_presence_of(:password) }
+  it { should validate_presence_of(:age) }
 end

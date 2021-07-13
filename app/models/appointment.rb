@@ -5,4 +5,3 @@ class Appointment < ApplicationRecord
   # validation
   validates_presence_of :appointment_date
 end
-  

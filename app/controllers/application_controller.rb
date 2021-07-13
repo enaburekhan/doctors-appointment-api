@@ -1,10 +1,12 @@
 class ApplicationController < ActionController::API
+  include Response
+
   private
 
   def secret
     Rails.application.secret_key_base
   end
-  
+
   def encode_token(payload)
     JWT.encode(payload, secret)
   end

@@ -1,34 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe 'Appointments', type: :request do
-  # Test suite for POST /appointments
-  describe 'POST /api/v1/appointments' do
-    # valid payload
-    let(:valid_attributes) { { appointment_date: 20 / 0o7 / 2021 } }
+  before(:example) do
+    @user = User.create(username: 'test_user', password: '1234', age: 35)
+    @appointment = Appointment.create(appointment_date: 20 / 0o7 / 2021, doctor_id: 1, user_id: 1)
+    token = JWT.encode({ user_id: @user.id }, Rails.application.secret_key_base)
+    @headers = { Authorization: "Bearer #{token}" }
+  end
 
-    context 'when the request is valid' do
-      before { post '/api/v1/appointments', headers: 'Bearer jwt' params: valid_attributes }
+  it 'shows all appointments' do
+    get '/api/v1/appointments', headers: @headers
+    expect(response).to have_http_status(:ok)
+  end
 
-      it 'creates an appointment' do
-        expect(json['appointment_date']).to eq(20 / 0o7 / 2021)
-      end
-
-      it 'returns status code 201' do
-        expect(response).to have_http_status(201)
-      end
-    end
-
-    context 'when the request is invalid' do
-      before { post '/api/v1/appointments', params: { appointment_date: 'Foobar' } }
-
-      it 'returns status code 422' do
-        expect(response).to have_http_status(422)
-      end
-
-      it 'returns a validation failure message' do
-        expect(response.body)
-          .to match(/Validation failed: Appointment date can't be blank/)
-      end
-    end
+  it 'displays appointment information' do
+    get "/api/v1/appointments/#{@appointment.id}", headers: @headers
+    expect(response).to have_http_status(:ok)
   end
 end
