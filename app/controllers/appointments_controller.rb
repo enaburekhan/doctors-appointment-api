@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
-  before_action :find_appointment, only: %i[show update destroy]
   before_action :authorize
+  before_action :find_appointment, only: %i[show update destroy]
 
   def index
     @appointments = current_user.appointments
@@ -13,7 +13,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
+    @appointment = current_user.appointments.build(appointment_params)
 
     if @appointment.save
       render json: @appointment, status: :created
@@ -38,10 +38,14 @@ class AppointmentsController < ApplicationController
   private
 
   def find_appointment
-    @appointment = Appointment.find(params[:id])
+    # @appointment = Appointment.find(params[:id])
+    @appointment = current_user.appointments.find_by(id: params[:id])
+    render json: { failure: "Appointment doesn't exist" }, status: :no_appointment unless @appointment
   end
 
   def appointment_params
     params.permit(:appointment_date, :doctor_id, :user_id)
   end
 end
+
+

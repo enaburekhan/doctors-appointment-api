@@ -123,3 +123,720 @@ FOREIGN KEY ("user_id")
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-07-12 12:13:08 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/eric/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/eric/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 16.9ms | Allocations: 461)
+Completed 200 OK in 36ms (Views: 24.6ms | ActiveRecord: 0.0ms | Allocations: 3920)
+
+
+Started GET "/users" for ::1 at 2021-07-12 12:13:20 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/api/v1/users" for ::1 at 2021-07-12 12:13:35 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users"):
+  
+Started POST "/api/v1/users" for ::1 at 2021-07-12 12:16:53 +0100
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>41, "user"=>{"username"=>"test_user", "age"=>41}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "test_user"], ["password_digest", "$2a$12$GewCFrwv7FeUeyjuCJLJmecieg/oGwnHC8qvxNShrV9LQAetpLFvW"], ["age", 41], ["created_at", "2021-07-12 11:16:53.818096"], ["updated_at", "2021-07-12 11:16:53.818096"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 355ms (ActiveRecord: 14.2ms | Allocations: 9074)
+
+
+  
+NameError (uninitialized constant ApplicationController::JWT):
+  
+app/controllers/application_controller.rb:9:in `encode_token'
+app/controllers/users_controller.rb:7:in `create'
+Started POST "/api/v1/users" for ::1 at 2021-07-12 12:22:00 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>41, "user"=>{"username"=>"test_user", "age"=>41}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "test_user"], ["password_digest", "$2a$12$CXo0UB8U5GwdFGbJIth/A.iWoolXvTLgW30N55TKW8.oCvsFIHmuu"], ["age", 41], ["created_at", "2021-07-12 11:22:01.311758"], ["updated_at", "2021-07-12 11:22:01.311758"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 201 Created in 336ms (Views: 0.4ms | ActiveRecord: 13.2ms | Allocations: 9335)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 12:29:51 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 191)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 12:32:30 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 1.1ms | Allocations: 196)
+
+
+  
+ArgumentError (Unrecognized status code :authorized):
+  
+app/controllers/application_controller.rb:30:in `authorize'
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 12:35:42 +0100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 317)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 12:37:57 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+[31mUnpermitted parameter: :appointment[0m
+Completed 422 Unprocessable Entity in 470ms (Views: 432.4ms | ActiveRecord: 1.8ms | Allocations: 346627)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 12:41:41 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 308)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 12:41:48 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 106)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.4ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr Osamu Akpede"], ["specialization", "Gynecologist"], ["experience", "7 Years"], ["image", "https://image.freepik.com/free-vector/smiley-doctor-with-clipboard-stethoscope_23-2147657761.jpg"], ["created_at", "2021-07-12 13:18:41.750362"], ["updated_at", "2021-07-12 13:18:41.750362"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "test_user"], ["password_digest", "$2a$12$eX/y/CnV85rrdix5cyRGE.o9XR.KgMQSNC31DFsrsgvlBzaWBLJ86"], ["age", 41], ["created_at", "2021-07-12 13:31:26.011156"], ["updated_at", "2021-07-12 13:31:26.011156"]]
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.4ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr Osamu Akpede"], ["specialization", "Gynecologist"], ["experience", "7 Years"], ["image", "https://image.freepik.com/free-vector/smiley-doctor-with-clipboard-stethoscope_23-2147657761.jpg"], ["created_at", "2021-07-12 13:31:26.058351"], ["updated_at", "2021-07-12 13:31:26.058351"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (2.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "test_user"], ["password_digest", "$2a$12$.f6VEv/AKneqZY666eGt7e/p3cmx7fbojBdBiS/KlRqkh5T91FLHS"], ["age", 41], ["created_at", "2021-07-12 13:33:36.467755"], ["updated_at", "2021-07-12 13:33:36.467755"]]
+  [1m[36mTRANSACTION (17.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.8ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr Osame Akpee"], ["specialization", "Gynecologist"], ["experience", "7 years "], ["image", "https://image.freepik.com/free-vector/smiley-doctor-with-clipboard-stethoscope_23-2147657761.jpg"], ["created_at", "2021-07-12 13:37:38.431990"], ["updated_at", "2021-07-12 13:37:38.431990"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveForeignKey (20210712140227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adoctors" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "specialization" varchar DEFAULT NULL, "experience" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_adoctors_on_user_id" ON "adoctors" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adoctors" ("id","name","specialization","experience","image","created_at","updated_at","user_id")
+                     SELECT "id","name","specialization","experience","image","created_at","updated_at","user_id" FROM "doctors"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "doctors"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "specialization" varchar DEFAULT NULL, "experience" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_doctors_on_user_id" ON "doctors" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "doctors" ("id","name","specialization","experience","image","created_at","updated_at","user_id")
+                     SELECT "id","name","specialization","experience","image","created_at","updated_at","user_id" FROM "adoctors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adoctors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210712140227"]]
+  [1m[36mTRANSACTION (13.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.9ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr Osamu Akpede"], ["specialization", "Gynecologist"], ["experience", "7 Years"], ["image", "https://image.freepik.com/free-vector/smiley-doctor-with-clipboard-stethoscope_23-2147657761.jpg"], ["created_at", "2021-07-12 14:06:05.150846"], ["updated_at", "2021-07-12 14:06:05.150846"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveUserIdFromDoctors (20210712154009)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveUserIdFromDoctors (20210712154009)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveUserIdFromDoctors (20210712154009)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveUserIdFromDoctors (20210712154009)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adoctors" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "specialization" varchar DEFAULT NULL, "experience" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_adoctors_on_user_id" ON "adoctors" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adoctors" ("id","name","specialization","experience","image","created_at","updated_at","user_id")
+                     SELECT "id","name","specialization","experience","image","created_at","updated_at","user_id" FROM "doctors"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "doctors"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "specialization" varchar DEFAULT NULL, "experience" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "doctors" ("id","name","specialization","experience","image","created_at","updated_at")
+                     SELECT "id","name","specialization","experience","image","created_at","updated_at" FROM "adoctors"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "adoctors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210712154009"]]
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.4ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr Osamu Akpede"], ["specialization", "Gynecologist"], ["experience", "7 Years"], ["image", "https://image.freepik.com/free-vector/smiley-doctor-with-clipboard-stethoscope_23-2147657761.jpg"], ["created_at", "2021-07-12 15:52:08.278052"], ["updated_at", "2021-07-12 15:52:08.278052"]]
+  [1m[36mTRANSACTION (12.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.3ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr Osamu Akpede"], ["specialization", "Gynecologist"], ["experience", "7 Years"], ["image", "https://image.freepik.com/free-vector/smiley-doctor-with-clipboard-stethoscope_23-2147657761.jpg"], ["created_at", "2021-07-12 15:56:10.946723"], ["updated_at", "2021-07-12 15:56:10.946723"]]
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.3ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr Clario Akpede"], ["specialization", "Obstetrician"], ["experience", "6 Years"], ["image", "https://image.freepik.com/free-vector/therapist-physician-doctor_82574-5381.jpg"], ["created_at", "2021-07-12 15:56:10.964839"], ["updated_at", "2021-07-12 15:56:10.964839"]]
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.3ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr Osato David"], ["specialization", "Optamologist"], ["experience", "8 Years"], ["image", "https://img.freepik.com/free-vector/smiley-female-doctor-with-clipboard-stethoscope_23-2147657762.jpg"], ["created_at", "2021-07-12 15:56:10.983301"], ["updated_at", "2021-07-12 15:56:10.983301"]]
+  [1m[36mTRANSACTION (14.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.4ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr Mark Joe"], ["specialization", "Orthopaedic surgeon"], ["experience", "9 Years"], ["image", "https://image.freepik.com/free-vector/female-doctor-pointing-clipboard_23-2147791255.jpg"], ["created_at", "2021-07-12 15:56:11.003374"], ["updated_at", "2021-07-12 15:56:11.003374"]]
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2021-07-12 16:57:10 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/eric/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/eric/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.8ms | Allocations: 417)
+Completed 200 OK in 22ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 2941)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 16:58:10 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 259)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-07-12 17:00:02 +0100
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "user"=>{"username"=>"test_user", "age"=>"41"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "test_user"], ["password_digest", "$2a$12$YnDqWm3LYfkj4nuTICyT/eKotllKgP/D/fC3KhRQk27UJERZOsocy"], ["age", 41], ["created_at", "2021-07-12 16:00:02.768233"], ["updated_at", "2021-07-12 16:00:02.768233"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (16.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 201 Created in 413ms (Views: 0.4ms | ActiveRecord: 18.4ms | Allocations: 7981)
+
+
+Started POST "/api/v1/doctors" for ::1 at 2021-07-12 17:02:52 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/doctors"):
+  
+Started GET "/api/v1/doctors" for ::1 at 2021-07-12 17:04:02 +0100
+Processing by DoctorsController#index as */*
+  Parameters: {"name"=>"Dr Osamu Akpede", "specialization"=>"Gynecologist", "experience"=>"7 years", "image"=>"https://image.freepik.com/free-vector/smiley-doctor-with-clipboard-stethoscope_23-2147657761.jpg", "doctor"=>{"name"=>"Dr Osamu Akpede", "specialization"=>"Gynecologist", "experience"=>"7 years", "image"=>"https://image.freepik.com/free-vector/smiley-doctor-with-clipboard-stethoscope_23-2147657761.jpg"}}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 1.4ms | Allocations: 4369)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 17:13:38 +0100
+Processing by AppointmentsController#create as */*
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | Allocations: 105)
+
+
+Started GET "/" for ::1 at 2021-07-12 17:14:47 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/eric/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/eric/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 31.6ms | Allocations: 180)
+Completed 200 OK in 34ms (Views: 33.1ms | Allocations: 830)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-07-12 17:14:47 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 17:17:52 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 183)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 17:18:12 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 308)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 17:18:15 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 106)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 17:18:31 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 183)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 17:18:33 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 105)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 17:30:29 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Completed 404 Not Found in 9ms (ActiveRecord: 1.0ms | Allocations: 2487)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/application_controller.rb:30:in `authorize'
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 17:33:50 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Completed 404 Not Found in 12ms (ActiveRecord: 6.2ms | Allocations: 1766)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/application_controller.rb:30:in `authorize'
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 17:34:59 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Completed 404 Not Found in 5ms (ActiveRecord: 2.3ms | Allocations: 1765)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/application_controller.rb:30:in `authorize'
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 17:35:41 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 183)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 17:36:37 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 184)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 17:36:40 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 103)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 17:39:40 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 183)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 18:11:20 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 308)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 18:11:23 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 106)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 19:27:57 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 105)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 19:28:33 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | Allocations: 128)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 19:38:39 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 117)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 19:44:28 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 119)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 19:47:15 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | Allocations: 117)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 19:47:53 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 117)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 20:03:31 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 119)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 20:03:42 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 119)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 20:04:35 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | Allocations: 119)
+
+
+Started GET "/" for ::1 at 2021-07-12 20:05:34 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/eric/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/eric/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.6ms | Allocations: 356)
+Completed 200 OK in 26ms (Views: 20.2ms | Allocations: 2749)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-07-12 20:05:45 +0100
+Processing by AppointmentsController#index as HTML
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 100)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-07-12 20:06:11 +0100
+Processing by AppointmentsController#index as HTML
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | Allocations: 100)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-07-12 20:22:44 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#index as HTML
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-07-12 20:22:49 +0100
+Processing by AppointmentsController#index as HTML
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 103)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-12 20:23:07 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 128)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-13 07:18:23 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 9.5ms | Allocations: 333)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-07-13 07:31:56 +0100
+Processing by AppointmentsController#index as HTML
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 121)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-13 09:57:15 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 201)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "test_user"], ["password_digest", "$2a$12$odbvxYTT0s7FQ2XbcXVhjeWDfg7VVGjTpweVg5WG76VbpMMGl7tMq"], ["age", 41], ["created_at", "2021-07-13 09:25:54.830473"], ["updated_at", "2021-07-13 09:25:54.830473"]]
+  [1m[36mTRANSACTION (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.3ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr Osamu Akpede"], ["specialization", "Gynecologist"], ["experience", "7 Years"], ["image", "https://image.freepik.com/free-vector/smiley-doctor-with-clipboard-stethoscope_23-2147657761.jpg"], ["created_at", "2021-07-13 09:25:54.856727"], ["updated_at", "2021-07-13 09:25:54.856727"]]
+  [1m[36mTRANSACTION (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.3ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr Clario Akpede"], ["specialization", "Obstetrician"], ["experience", "6 Years"], ["image", "https://image.freepik.com/free-vector/therapist-physician-doctor_82574-5381.jpg"], ["created_at", "2021-07-13 09:25:54.877200"], ["updated_at", "2021-07-13 09:25:54.877200"]]
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.3ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr Osato David"], ["specialization", "Optamologist"], ["experience", "8 Years"], ["image", "https://img.freepik.com/free-vector/smiley-female-doctor-with-clipboard-stethoscope_23-2147657762.jpg"], ["created_at", "2021-07-13 09:25:54.894293"], ["updated_at", "2021-07-13 09:25:54.894293"]]
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.3ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr Mark Joe"], ["specialization", "Orthopaedic surgeon"], ["experience", "9 Years"], ["image", "https://image.freepik.com/free-vector/female-doctor-pointing-clipboard_23-2147791255.jpg"], ["created_at", "2021-07-13 09:25:54.911273"], ["updated_at", "2021-07-13 09:25:54.911273"]]
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/api/v1/appointments" for ::1 at 2021-07-13 10:26:36 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 333)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-07-13 10:29:39 +0100
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "user"=>{"username"=>"test_user"}}
+[31mUnpermitted parameter: :user[0m
+Completed 406 Not Acceptable in 754ms (Views: 0.4ms | ActiveRecord: 2.6ms | Allocations: 341991)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-07-13 10:30:06 +0100
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "user"=>{"username"=>"test_user", "age"=>"41"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (5.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "test_user"], ["password_digest", "$2a$12$6/l5vjk7tRKhoA49nc8yku1e9YCVQv8sNIBvOkUtI4CwG.ggHl8gi"], ["age", 41], ["created_at", "2021-07-13 09:30:06.561260"], ["updated_at", "2021-07-13 09:30:06.561260"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 201 Created in 413ms (Views: 0.3ms | ActiveRecord: 20.0ms | Allocations: 4999)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-07-13 10:45:35 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users"):
+  
+Started GET "/" for ::1 at 2021-07-13 10:47:08 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/eric/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/eric/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.2ms | Allocations: 185)
+Completed 200 OK in 18ms (Views: 11.6ms | Allocations: 1860)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-07-13 10:53:31 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "user"=>{"username"=>"test_user", "age"=>"41"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "test_user"], ["password_digest", "$2a$12$X8XDWKFfp6oRvhTwAD4ES.qJYfucp/5yyj.6b//A7hZ8VX.JwJof."], ["age", 41], ["created_at", "2021-07-13 09:53:31.932572"], ["updated_at", "2021-07-13 09:53:31.932572"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 201 Created in 341ms (Views: 0.5ms | ActiveRecord: 13.0ms | Allocations: 10819)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-07-13 10:55:35 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "user"=>{"username"=>"test_user", "age"=>"41"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (3.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "test_user"], ["password_digest", "$2a$12$Rr.A3ECzyi3eDYf8mWDBaOz4.qWEUzCc4e66dS8XAu9Bzg.50g48q"], ["age", 41], ["created_at", "2021-07-13 09:55:36.197853"], ["updated_at", "2021-07-13 09:55:36.197853"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (12.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 201 Created in 361ms (Views: 0.4ms | ActiveRecord: 17.3ms | Allocations: 10820)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-07-13 11:04:19 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "user"=>{"username"=>"test_user", "age"=>"41"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "test_user"], ["password_digest", "$2a$12$J3VP4hpLOGbXLT/yXqNzcOCJjLQ3YMIulZchOP3/ybTvMSj4vMnnC"], ["age", 41], ["created_at", "2021-07-13 10:04:20.303178"], ["updated_at", "2021-07-13 10:04:20.303178"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 201 Created in 341ms (Views: 0.7ms | ActiveRecord: 16.0ms | Allocations: 9808)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-13 11:19:42 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 213)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-07-13 11:38:03 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"34", "user"=>{"username"=>"test_user", "age"=>"34"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "test_user"], ["password_digest", "$2a$12$roD.jrd/ySPMkOnOH2i6iOnAfnamy7vDwi1vizywCCBOh1UMCoKn."], ["age", 34], ["created_at", "2021-07-13 10:38:03.740952"], ["updated_at", "2021-07-13 10:38:03.740952"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (25.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 201 Created in 408ms (Views: 0.5ms | ActiveRecord: 26.6ms | Allocations: 6778)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-13 11:39:21 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "appointment"=>{"appointment_date"=>"20/07/2021"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+[31mUnpermitted parameter: :appointment[0m
+Completed 422 Unprocessable Entity in 574ms (Views: 479.2ms | ActiveRecord: 2.9ms | Allocations: 346319)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/api/v1/appointments" for ::1 at 2021-07-13 11:44:38 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "doctor_id"=>1, "user_id"=>1, "appointment"=>{"appointment_date"=>"20/07/2021", "doctor_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+[31mUnpermitted parameter: :appointment[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mAppointment Create (3.0ms)[0m  [1m[32mINSERT INTO "appointments" ("appointment_date", "doctor_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_date", "2021-07-20 00:00:00"], ["doctor_id", 1], ["created_at", "2021-07-13 10:44:38.798950"], ["updated_at", "2021-07-13 10:44:38.798950"], ["user_id", 11]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (18.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+Completed 201 Created in 86ms (Views: 0.9ms | ActiveRecord: 24.1ms | Allocations: 25235)
+
+
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/api/v1/appointments" for ::1 at 2021-07-13 12:22:15 +0100
+Processing by AppointmentsController#index as HTML
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 138)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-13 12:22:41 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "doctor_id"=>1, "user_id"=>1, "appointment"=>{"appointment_date"=>"20/07/2021", "doctor_id"=>1, "user_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+[31mUnpermitted parameter: :appointment[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mAppointment Create (12.1ms)[0m  [1m[32mINSERT INTO "appointments" ("appointment_date", "doctor_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_date", "2021-07-20 00:00:00"], ["doctor_id", 1], ["created_at", "2021-07-13 11:22:41.554308"], ["updated_at", "2021-07-13 11:22:41.554308"], ["user_id", 11]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (38.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+Completed 201 Created in 74ms (Views: 0.6ms | ActiveRecord: 51.7ms | Allocations: 6785)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-07-13 12:22:47 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"20/07/2021", "doctor_id"=>1, "user_id"=>1, "appointment"=>{"appointment_date"=>"20/07/2021", "doctor_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+[31mUnpermitted parameter: :appointment[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mAppointment Create (0.5ms)[0m  [1m[32mINSERT INTO "appointments" ("appointment_date", "doctor_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_date", "2021-07-20 00:00:00"], ["doctor_id", 1], ["created_at", "2021-07-13 11:22:47.979427"], ["updated_at", "2021-07-13 11:22:47.979427"], ["user_id", 11]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (27.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+Completed 201 Created in 50ms (Views: 1.1ms | ActiveRecord: 28.8ms | Allocations: 4869)
+
+
