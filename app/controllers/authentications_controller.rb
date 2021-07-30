@@ -4,7 +4,7 @@ class AuthenticationsController < ApplicationController
     if user&.authenticate(params[:password])
       payload = { user_id: user.id }
       token = encode_token(payload)
-      render json: { username: user.username, jwt: token }
+      render json: { username: user.username, user_id: user.id, jwt: token }
     else
       render json: { failure: 'Login failed! Invalid username/password combination.' }, status: :not_acceptable
     end
