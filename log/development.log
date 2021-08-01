@@ -1131,3 +1131,162 @@ Completed 201 Created in 60ms (Views: 1.3ms | ActiveRecord: 36.7ms | Allocations
 
   [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/doctors" for ::1 at 2021-08-01 13:00:40 +0100
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/doctors"):
+  
+Started GET "/" for ::1 at 2021-08-01 13:00:47 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/eric/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/eric/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.3ms | Allocations: 185)
+Completed 200 OK in 34ms (Views: 18.8ms | ActiveRecord: 0.0ms | Allocations: 2320)
+
+
+Started POST "/users" for ::1 at 2021-08-01 13:02:07 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/users"):
+  
+Started GET "/users" for ::1 at 2021-08-01 13:05:22 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started POST "/api/v1/users" for ::1 at 2021-08-01 13:06:04 +0100
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>1, "user"=>{"username"=>"test_user", "age"=>1}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "test_user"], ["password_digest", "$2a$12$.IFfLbvD6xDuAnHkUqOIa.u.14KmW3ZHFNf6KZ58kEh2VbIIeXvNe"], ["age", 1], ["created_at", "2021-08-01 12:06:04.750073"], ["updated_at", "2021-08-01 12:06:04.750073"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 201 Created in 338ms (Views: 0.3ms | ActiveRecord: 9.9ms | Allocations: 8040)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-08-01 13:08:07 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1, "appointment"=>{"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[31mUnpermitted parameter: :appointment[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mAppointment Create (0.3ms)[0m  [1m[32mINSERT INTO "appointments" ("appointment_date", "doctor_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_date", "2021-08-01 00:00:00"], ["doctor_id", 1], ["created_at", "2021-08-01 12:08:07.852888"], ["updated_at", "2021-08-01 12:08:07.852888"], ["user_id", 15]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+Completed 201 Created in 147ms (Views: 1.0ms | ActiveRecord: 10.3ms | Allocations: 18595)
+
+
+Started GET "/api/v1/appointments/1" for ::1 at 2021-08-01 13:10:20 +0100
+Processing by AppointmentsController#show as */*
+  Parameters: {"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1, "id"=>"1", "appointment"=>{"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["user_id", 15], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:41:in `find_appointment'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.8ms | Allocations: 2060)
+
+
+  
+ArgumentError (Unrecognized status code :no_appointment):
+  
+app/controllers/appointments_controller.rb:42:in `find_appointment'
+Started GET "/api/v1/appointments/2" for ::1 at 2021-08-01 13:11:21 +0100
+Processing by AppointmentsController#show as */*
+  Parameters: {"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1, "id"=>"2", "appointment"=>{"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["user_id", 15], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:41:in `find_appointment'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 1952)
+
+
+  
+ArgumentError (Unrecognized status code :no_appointment):
+  
+app/controllers/appointments_controller.rb:42:in `find_appointment'
+Started GET "/api/v1/appointments" for ::1 at 2021-08-01 13:11:31 +0100
+Processing by AppointmentsController#index as */*
+  Parameters: {"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1, "appointment"=>{"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = ?[0m  [["user_id", 15]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 2278)
+
+
+Started GET "/api/v1/appointments/12" for ::1 at 2021-08-01 13:11:54 +0100
+Processing by AppointmentsController#show as */*
+  Parameters: {"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1, "id"=>"12", "appointment"=>{"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["user_id", 15], ["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:41:in `find_appointment'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 2084)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-08-01 13:12:12 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1, "appointment"=>{"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[31mUnpermitted parameter: :appointment[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mAppointment Create (0.4ms)[0m  [1m[32mINSERT INTO "appointments" ("appointment_date", "doctor_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_date", "2021-08-01 00:00:00"], ["doctor_id", 1], ["created_at", "2021-08-01 12:12:12.815640"], ["updated_at", "2021-08-01 12:12:12.815640"], ["user_id", 15]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (14.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+Completed 201 Created in 31ms (Views: 0.4ms | ActiveRecord: 15.4ms | Allocations: 6268)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-08-01 13:12:18 +0100
+Processing by AppointmentsController#create as */*
+  Parameters: {"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1, "appointment"=>{"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[31mUnpermitted parameter: :appointment[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mAppointment Create (0.5ms)[0m  [1m[32mINSERT INTO "appointments" ("appointment_date", "doctor_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_date", "2021-08-01 00:00:00"], ["doctor_id", 1], ["created_at", "2021-08-01 12:12:18.446939"], ["updated_at", "2021-08-01 12:12:18.446939"], ["user_id", 15]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+Completed 201 Created in 25ms (Views: 1.1ms | ActiveRecord: 8.4ms | Allocations: 5598)
+
+
+Started GET "/api/v1/appointments/13" for ::1 at 2021-08-01 13:12:31 +0100
+Processing by AppointmentsController#show as */*
+  Parameters: {"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1, "id"=>"13", "appointment"=>{"appointment_date"=>"01/08/2021", "doctor_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["user_id", 15], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:41:in `find_appointment'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 2069)
+
+
