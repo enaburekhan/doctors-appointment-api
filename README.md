@@ -19,7 +19,7 @@ The doctors-appointment-api stores a list of expert doctors with their attribute
 
 ## API endpoint 
 
-[doctors-appointment-api](https://enab-doctors-appointment.herokuapp.com/api/v1)
+[doctors-appointment-api](https://agile-escarpment-87534.herokuapp.com/api/v1)
 
 ## Getting Started
 
