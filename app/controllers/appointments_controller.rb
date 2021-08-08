@@ -38,7 +38,8 @@ class AppointmentsController < ApplicationController
   private
 
   def find_appointment
-    @appointment = Appointment.find(params[:id])
+    @appointment = current_user.appointments.find_by(id: params[:id])
+    render json: { failure: "Appointment doesn't exist." }, status: :not_found unless @appointment
   end
 
   def appointment_params
