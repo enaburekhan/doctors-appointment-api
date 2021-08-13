@@ -27385,3 +27385,712 @@ Processing by DoctorsController#index as */*
 Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1114)
 
 
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:28:45 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 341ms (Views: 0.3ms | ActiveRecord: 5.2ms | Allocations: 9648)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:31:12 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 322ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 563)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:31:14 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 320ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 561)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:31:49 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 323ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 560)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:31:51 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 323ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 560)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:32:27 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 315ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 544)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:32:28 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 324ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:32:30 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 320ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 545)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:32:34 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 317ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:32:44 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 200 OK in 314ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 725)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 10:32:44 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (1.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 30ms (Views: 13.5ms | ActiveRecord: 6.1ms | Allocations: 5901)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:33:20 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 345ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 545)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:34:11 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 324ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:34:13 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 324ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:34:14 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 322ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 10:34:38 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 313ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 11:58:20 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 331ms (Views: 0.3ms | ActiveRecord: 7.3ms | Allocations: 2573)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 12:04:56 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 327ms (Views: 0.3ms | ActiveRecord: 7.5ms | Allocations: 2534)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 12:05:02 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 321ms (Views: 0.3ms | ActiveRecord: 4.7ms | Allocations: 544)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 12:07:58 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 317ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 12:08:02 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 321ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 12:08:12 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 321ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 544)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 12:08:53 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 316ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 12:08:55 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 332ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 12:38:08 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 365ms (Views: 0.2ms | ActiveRecord: 7.2ms | Allocations: 2533)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 14:11:37 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 383ms (Views: 0.4ms | ActiveRecord: 7.1ms | Allocations: 2555)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 14:14:18 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 361ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 15:32:03 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 362ms (Views: 0.3ms | ActiveRecord: 7.4ms | Allocations: 2534)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 15:53:26 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 200 OK in 341ms (Views: 0.2ms | ActiveRecord: 7.1ms | Allocations: 2616)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 15:53:27 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 1114)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 15:53:54 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 324ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 15:54:03 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 340ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 15:55:10 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 330ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 15:55:22 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 319ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 544)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 15:56:30 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 317ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 15:56:34 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 341ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 543)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-08-13 16:03:29 +0100
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "user"=>{"username"=>"test_user", "age"=>"41"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test_user"], ["password_digest", "$2a$12$0kb6edwPEQoO4pDhdFCXDe99e65faGSCjE7e2U8RqG78UeYC/Xfry"], ["age", 41], ["created_at", "2021-08-13 15:03:29.627586"], ["updated_at", "2021-08-13 15:03:29.627586"]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+Completed 201 Created in 348ms (Views: 0.5ms | ActiveRecord: 8.7ms | Allocations: 4726)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 16:03:29 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (1.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 1.2ms | Allocations: 1165)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 16:03:49 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 326ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 591)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 16:04:00 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 319ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 16:04:56 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 328ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 16:14:28 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 200 OK in 333ms (Views: 0.2ms | ActiveRecord: 7.1ms | Allocations: 2617)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 16:14:28 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (1.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 1.5ms | Allocations: 1114)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 16:15:04 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 328ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 544)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 16:16:26 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 200 OK in 316ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 626)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 16:16:26 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.4ms | Allocations: 1114)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 16:25:58 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 200 OK in 347ms (Views: 0.2ms | ActiveRecord: 6.8ms | Allocations: 2616)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 16:25:58 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.6ms | Allocations: 1114)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 16:27:36 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 320ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 16:54:20 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 200 OK in 347ms (Views: 0.3ms | ActiveRecord: 10.4ms | Allocations: 2616)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 16:54:21 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.9ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.9ms | Allocations: 1114)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 16:54:45 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 328ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 16:58:19 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 326ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 544)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 17:03:06 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 200 OK in 345ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 626)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 17:03:06 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.6ms | Allocations: 1114)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 17:03:14 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 1114)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 17:03:21 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1114)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 17:03:35 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"31", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"31"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 330ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 543)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 17:04:11 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 200 OK in 345ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 628)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 17:04:12 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 1114)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 17:13:45 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"1", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"1"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 341ms (Views: 0.4ms | ActiveRecord: 8.3ms | Allocations: 2533)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 17:18:04 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_use", "password"=>"[FILTERED]", "age"=>"1", "authentication"=>{"username"=>"test_use", "password"=>"[FILTERED]", "age"=>"1"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_use"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 510)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2021-08-13 17:18:25 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41", "authentication"=>{"username"=>"test_user", "password"=>"[FILTERED]", "age"=>"41"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test_user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 200 OK in 333ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 627)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 17:18:25 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.6ms | Allocations: 1114)
+
+
+Started GET "/api/v1/doctors/1" for ::1 at 2021-08-13 17:18:38 +0100
+Processing by DoctorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:15:in `find_doctor'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 809)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-08-13 17:18:50 +0100
+Processing by AppointmentsController#create as JSON
+  Parameters: {"appointment_date"=>"2021-08-20T17:18", "doctor_id"=>"3", "user_id"=>2, "appointment"=>{"appointment_date"=>"2021-08-20T17:18", "doctor_id"=>"3", "user_id"=>2}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[31mUnpermitted parameter: :appointment[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mDoctor Load (1.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mAppointment Create (1.2ms)[0m  [1m[32mINSERT INTO "appointments" ("appointment_date", "doctor_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["appointment_date", "2021-08-20 17:18:00"], ["doctor_id", 3], ["created_at", "2021-08-13 16:18:50.963896"], ["updated_at", "2021-08-13 16:18:50.963896"], ["user_id", 2]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+Completed 201 Created in 47ms (Views: 0.7ms | ActiveRecord: 12.7ms | Allocations: 9658)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-08-13 17:18:51 +0100
+Processing by AppointmentsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.9ms | Allocations: 2412)
+
+
+Started DELETE "/api/v1/appointments/21" for ::1 at 2021-08-13 17:18:53 +0100
+Processing by AppointmentsController#destroy as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1 AND "appointments"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:41:in `find_appointment'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/appointments_controller.rb:34:in `destroy'
+  [1m[36mAppointment Destroy (0.6ms)[0m  [1m[31mDELETE FROM "appointments" WHERE "appointments"."id" = $1[0m  [["id", 21]]
+  ↳ app/controllers/appointments_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/appointments_controller.rb:34:in `destroy'
+Completed 200 OK in 22ms (Views: 0.5ms | ActiveRecord: 5.4ms | Allocations: 3438)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-08-13 17:18:53 +0100
+Processing by AppointmentsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (1.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 5.6ms | ActiveRecord: 1.5ms | Allocations: 2067)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-08-13 17:18:56 +0100
+Processing by AppointmentsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 0.8ms | Allocations: 2069)
+
+
+Started DELETE "/api/v1/appointments/20" for ::1 at 2021-08-13 17:19:03 +0100
+Processing by AppointmentsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1 AND "appointments"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:41:in `find_appointment'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/appointments_controller.rb:34:in `destroy'
+  [1m[36mAppointment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "appointments" WHERE "appointments"."id" = $1[0m  [["id", 20]]
+  ↳ app/controllers/appointments_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/appointments_controller.rb:34:in `destroy'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 3.2ms | Allocations: 3297)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-08-13 17:19:03 +0100
+Processing by AppointmentsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.7ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 2.2ms | ActiveRecord: 1.1ms | Allocations: 1964)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-08-13 17:19:05 +0100
+Processing by AppointmentsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 0.6ms | Allocations: 1966)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-08-13 17:20:38 +0100
+Processing by AppointmentsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.7ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 2.2ms | ActiveRecord: 1.0ms | Allocations: 1964)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-08-13 17:21:49 +0100
+Processing by AppointmentsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 0.5ms | Allocations: 1964)
+
+
+Started POST "/api/v1/appointments" for ::1 at 2021-08-13 17:25:16 +0100
+Processing by AppointmentsController#create as JSON
+  Parameters: {"appointment_date"=>"2021-08-21T17:25", "doctor_id"=>"3", "user_id"=>2, "appointment"=>{"appointment_date"=>"2021-08-21T17:25", "doctor_id"=>"3", "user_id"=>2}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[31mUnpermitted parameter: :appointment[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mAppointment Create (0.9ms)[0m  [1m[32mINSERT INTO "appointments" ("appointment_date", "doctor_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["appointment_date", "2021-08-21 17:25:00"], ["doctor_id", 3], ["created_at", "2021-08-13 16:25:16.184716"], ["updated_at", "2021-08-13 16:25:16.184716"], ["user_id", 2]]
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/appointments_controller.rb:18:in `create'
+Completed 201 Created in 24ms (Views: 1.1ms | ActiveRecord: 5.8ms | Allocations: 4217)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-08-13 17:25:16 +0100
+Processing by AppointmentsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (1.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 2.8ms | ActiveRecord: 1.5ms | Allocations: 2067)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 17:26:01 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.4ms | Allocations: 1114)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2021-08-13 17:26:11 +0100
+Processing by AppointmentsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.7ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 3.2ms | ActiveRecord: 1.0ms | Allocations: 2067)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2021-08-13 17:26:13 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms | Allocations: 1114)
+
+
+Started GET "/api/v1/doctors/1" for ::1 at 2021-08-13 17:26:16 +0100
+Processing by DoctorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (2.0ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:15:in `find_doctor'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 2.0ms | Allocations: 663)
+
+
