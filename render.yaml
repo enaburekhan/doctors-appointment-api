@@ -1,18 +1,18 @@
 databases:
-  - name: techBook_app
-    databaseName: techBook_app
-    user: techBook_app
+  - name: techbookapp
+    databaseName: techbookapp
+    user: techbookapp
 
 services:
   - type: web
-    name: techBook_app
+    name: techbookapp
     env: ruby
     buildCommand: './bin/render-build.sh'
     startCommand: 'bundle exec puma -C config/puma.rb'
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: techBook_app
+          name: techbookapp
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
