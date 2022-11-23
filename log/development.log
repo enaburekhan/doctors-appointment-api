@@ -32310,3 +32310,82 @@ Started POST "/api/users" for ::1 at 2022-11-23 21:35:45 +0100
   
 ActionController::RoutingError (No route matches [POST] "/api/users"):
   
+Started POST "/api/v1/users" for ::1 at 2022-11-23 21:40:09 +0100
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"matilda", "email"=>"matilda@gmail.com", "password"=>"[FILTERED]", "user"=>{}}
+[31mUnpermitted parameters: :name, :email, :user[0m
+Completed 406 Not Acceptable in 2058ms (Views: 0.5ms | ActiveRecord: 3.8ms | Allocations: 1336331)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-11-23 21:41:39 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"Username"=>"matilda", "age"=>18, "password"=>"[FILTERED]", "user"=>{"age"=>18}}
+[31mUnpermitted parameters: :Username, :user[0m
+Completed 406 Not Acceptable in 679ms (Views: 0.3ms | ActiveRecord: 4.6ms | Allocations: 343320)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-11-23 21:42:03 +0100
+Processing by UsersController#create as */*
+  Parameters: {"Username"=>"secure123", "age"=>18, "password"=>"[FILTERED]", "user"=>{"age"=>18}}
+[31mUnpermitted parameters: :Username, :user[0m
+Completed 406 Not Acceptable in 299ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 909)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-11-23 21:42:47 +0100
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"secure123", "age"=>18, "password"=>"[FILTERED]", "user"=>{"username"=>"secure123", "age"=>18}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "secure123"], ["password_digest", "$2a$12$a11MJ6dDF9k0akq.qHbuaOFzb9m8.i/Hukcp3/oz91vk.Y/akWx/e"], ["age", 18], ["created_at", "2022-11-23 20:42:48.315213"], ["updated_at", "2022-11-23 20:42:48.315213"]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+Completed 201 Created in 332ms (Views: 0.3ms | ActiveRecord: 6.7ms | Allocations: 2640)
+
+
+Started POST "/api/v1/auth" for ::1 at 2022-11-23 21:45:11 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/auth"):
+  
+Started POST "/api/v1/authentications" for ::1 at 2022-11-23 21:45:59 +0100
+Processing by AuthenticationsController#create as */*
+  Parameters: {"username"=>"secure123", "password"=>"[FILTERED]", "authentication"=>{"username"=>"secure123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "secure123"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 200 OK in 314ms (Views: 0.3ms | ActiveRecord: 4.4ms | Allocations: 3534)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2022-11-23 21:48:04 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 16ms (Views: 8.1ms | ActiveRecord: 5.2ms | Allocations: 5997)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2022-11-23 21:50:00 +0100
+Processing by AuthenticationsController#create as */*
+  Parameters: {"username"=>"secure123", "password"=>"[FILTERED]", "authentication"=>{"username"=>"secure123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "secure123"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 200 OK in 307ms (Views: 0.2ms | ActiveRecord: 4.3ms | Allocations: 3380)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test_user"], ["password_digest", "$2a$12$SH0cTzlTHf1RsZreXDc8g.gkBRfV8Y6aLMzInoP3AMxrbWG6wPbHO"], ["age", 41], ["created_at", "2022-11-23 23:50:41.840680"], ["updated_at", "2022-11-23 23:50:41.840680"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Create (0.4ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr Osamu Akpede"], ["specialization", "Gynecologist"], ["experience", "7 Years"], ["image", "https://image.freepik.com/free-vector/smiley-doctor-with-clipboard-stethoscope_23-2147657761.jpg"], ["created_at", "2022-11-23 23:50:41.860343"], ["updated_at", "2022-11-23 23:50:41.860343"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Create (0.3ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr Clario Akpede"], ["specialization", "Obstetrician"], ["experience", "6 Years"], ["image", "https://image.freepik.com/free-vector/therapist-physician-doctor_82574-5381.jpg"], ["created_at", "2022-11-23 23:50:41.870636"], ["updated_at", "2022-11-23 23:50:41.870636"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Create (0.3ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr Osato David"], ["specialization", "Optamologist"], ["experience", "8 Years"], ["image", "https://img.freepik.com/free-vector/smiley-female-doctor-with-clipboard-stethoscope_23-2147657762.jpg"], ["created_at", "2022-11-23 23:50:41.876674"], ["updated_at", "2022-11-23 23:50:41.876674"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Create (0.3ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr Mark Joe"], ["specialization", "Orthopaedic surgeon"], ["experience", "9 Years"], ["image", "https://image.freepik.com/free-vector/female-doctor-pointing-clipboard_23-2147791255.jpg"], ["created_at", "2022-11-23 23:50:41.883075"], ["updated_at", "2022-11-23 23:50:41.883075"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
