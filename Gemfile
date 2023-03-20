@@ -54,6 +54,4 @@ gem 'sprockets', '~> 3.5', '>= 3.5.2'
 
 gem 'net-smtp', '~> 0.3.3'
 
-# gem 'net-pop', require: false
-
 gem 'net-pop', '~> 0.1.2'
