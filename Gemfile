@@ -52,6 +52,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'sprockets', '~> 3.5', '>= 3.5.2'
 
-gem 'net-smtp', '~> 0.3.3'
+# gem 'net-smtp', '~> 0.3.3'
+gem 'net-smtp', require: false
 
-gem 'net-pop', '~> 0.1.2'
+# gem 'net-pop', '~> 0.1.2'
+gem 'net-pop', require: false
