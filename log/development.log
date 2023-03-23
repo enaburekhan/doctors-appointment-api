@@ -32764,3 +32764,11 @@ Migrating to RemoveNotNullOnActiveStorageBlobsChecksum (20230323005113)
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mDoctor Create (0.4ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr Mark Joe"], ["specialization", "Orthopaedic surgeon"], ["experience", "9 Years"], ["image", "https://image.freepik.com/free-vector/female-doctor-pointing-clipboard_23-2147791255.jpg"], ["created_at", "2023-03-23 22:52:36.527722"], ["updated_at", "2023-03-23 22:52:36.527722"]]
   [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2023-03-24 00:12:01 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/eric/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/eric/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.6ms | Allocations: 580)
+Completed 200 OK in 27ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 4442)
+
+
