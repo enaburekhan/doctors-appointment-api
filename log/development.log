@@ -32788,3 +32788,32 @@ Completed 200 OK in 27ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 444
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mDoctor Create (0.4ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr Mark Joe"], ["specialization", "Orthopaedic surgeon"], ["experience", "9 Years"], ["image", "https://image.freepik.com/free-vector/female-doctor-pointing-clipboard_23-2147791255.jpg"], ["created_at", "2023-03-24 00:15:48.037192"], ["updated_at", "2023-03-24 00:15:48.037192"]]
   [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2023-03-24 21:14:25 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/eric/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/eric/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.6ms | Allocations: 474)
+Completed 200 OK in 20ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 3123)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6768799188830319690)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6768799188830319690)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (5.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (3.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "age", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test_user"], ["password_digest", "$2a$12$3kQk2DkNh/TmdM5G/sbd6e8pH/V41RLeUeJgoONL6yF06aNIYIVTy"], ["age", 41], ["created_at", "2023-03-24 20:15:20.751838"], ["updated_at", "2023-03-24 20:15:20.751838"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Create (0.9ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr Osamu Akpede"], ["specialization", "Gynecologist"], ["experience", "7 Years"], ["image", "https://image.freepik.com/free-vector/smiley-doctor-with-clipboard-stethoscope_23-2147657761.jpg"], ["created_at", "2023-03-24 20:15:20.772369"], ["updated_at", "2023-03-24 20:15:20.772369"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Create (0.4ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr Clario Akpede"], ["specialization", "Obstetrician"], ["experience", "6 Years"], ["image", "https://image.freepik.com/free-vector/therapist-physician-doctor_82574-5381.jpg"], ["created_at", "2023-03-24 20:15:20.778931"], ["updated_at", "2023-03-24 20:15:20.778931"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Create (0.4ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr Osato David"], ["specialization", "Optamologist"], ["experience", "8 Years"], ["image", "https://img.freepik.com/free-vector/smiley-female-doctor-with-clipboard-stethoscope_23-2147657762.jpg"], ["created_at", "2023-03-24 20:15:20.785244"], ["updated_at", "2023-03-24 20:15:20.785244"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Create (0.5ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr Mark Joe"], ["specialization", "Orthopaedic surgeon"], ["experience", "9 Years"], ["image", "https://image.freepik.com/free-vector/female-doctor-pointing-clipboard_23-2147791255.jpg"], ["created_at", "2023-03-24 20:15:20.790852"], ["updated_at", "2023-03-24 20:15:20.790852"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
