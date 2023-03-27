@@ -21,9 +21,11 @@ services:
         value: enabled
       - key: DATABASE_URL # Render PostgreSQL database
         fromDatabase:
-          name: postgresql-sinuous-83555
+          name: rails-api
           property: connectionString
 
 databases: # Render PostgreSQL database
-  - name: postgresql-sinuous-83555
-    ipAllowList: [] # only allow internal connections
+  - name: rails-api
+    ipAllowList: # allow external connections from everywhere
+  - source: 0.0.0.0/0
+    description: everywhere
