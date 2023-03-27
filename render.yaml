@@ -26,6 +26,4 @@ services:
 
 databases: # Render PostgreSQL database
   - name: rails-api
-    ipAllowList: # allow external connections from everywhere
-      - source: 0.0.0.0/0
-        description: everywhere
+    ipAllowList: [] # only allow internal connections
