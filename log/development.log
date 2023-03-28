@@ -33040,3 +33040,26 @@ Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 7.7ms | Allocations: 625
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mDoctor Create (0.4ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "specialization", "experience", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr Mark Joe"], ["specialization", "Orthopaedic surgeon"], ["experience", "9 Years"], ["image", "https://image.freepik.com/free-vector/female-doctor-pointing-clipboard_23-2147791255.jpg"], ["created_at", "2023-03-25 21:10:59.901468"], ["updated_at", "2023-03-25 21:10:59.901468"]]
   [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/doctors" for ::1 at 2023-03-27 16:06:53 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 34ms (Views: 19.1ms | ActiveRecord: 6.1ms | Allocations: 12639)
+
+
+Started GET "/api/v1/doctors/25" for ::1 at 2023-03-27 16:07:36 +0100
+Processing by DoctorsController#show as */*
+  Parameters: {"id"=>"25"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:15:in `find_doctor'
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 2704)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2023-03-27 17:04:15 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.7ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 12.1ms | Allocations: 6686)
+
+
