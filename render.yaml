@@ -2,11 +2,11 @@
 # https://www.npmjs.com/package/@renderinc/heroku-import
 # Schema documented at https://render.com/docs/yaml-spec
 services:
-  - type: web # valid values: https://render.com/docs/yaml-spec#type
+  - type: web 
     name: rails-api
-    env: ruby # valid values: https://render.com/docs/yaml-spec#environment
-    dockerfilePath: Dockerfile.render
-    plan: free # optional; defaults to starter
+    env: ruby
+    startCommand: bundle exec rails server -p $PORT
+    plan: free 
     numInstances: 1
     envVars:
       - key: LANG # Imported from Heroku app
