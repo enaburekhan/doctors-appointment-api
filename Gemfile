@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
+ruby '3.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 7.0.4'
@@ -50,7 +50,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'sprockets', '~> 3.5', '>= 3.5.2'
+# gem 'sprockets', '~> 4.2', '>= 4.2.1'
+
+# gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
 
 # gem 'net-smtp', '~> 0.3.3'
 gem 'net-smtp', require: false
