@@ -36628,3 +36628,132 @@ Processing by AppointmentsController#index as */*
 Completed 200 OK in 12ms (Views: 4.0ms | ActiveRecord: 1.0ms | Allocations: 2095)
 
 
+Started GET "/api/v1/appointments" for ::1 at 2024-06-03 10:54:53 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 77ms (Views: 17.4ms | ActiveRecord: 12.5ms | Allocations: 17510)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2024-06-03 10:54:53 +0100
+Processing by AppointmentsController#index as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 2.3ms | ActiveRecord: 2.1ms | Allocations: 2272)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2024-06-03 10:55:03 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"ericenaburekhan", "password"=>"[FILTERED]", "age"=>"34", "authentication"=>{"username"=>"ericenaburekhan", "password"=>"[FILTERED]", "age"=>"34"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ericenaburekhan"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 8ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 989)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2024-06-03 10:55:15 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"enaburekhan", "password"=>"[FILTERED]", "age"=>"43", "authentication"=>{"username"=>"enaburekhan", "password"=>"[FILTERED]", "age"=>"43"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "enaburekhan"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 406 Not Acceptable in 277ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 642)
+
+
+Started POST "/api/v1/authentications" for ::1 at 2024-06-03 10:55:24 +0100
+Processing by AuthenticationsController#create as JSON
+  Parameters: {"username"=>"enaburekhan", "password"=>"[FILTERED]", "age"=>"43", "authentication"=>{"username"=>"enaburekhan", "password"=>"[FILTERED]", "age"=>"43"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "enaburekhan"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:3:in `create'
+Completed 200 OK in 280ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 714)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2024-06-03 10:55:24 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 40ms (Views: 30.0ms | ActiveRecord: 6.0ms | Allocations: 5868)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2024-06-03 10:55:25 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 1160)
+
+
+Started GET "/api/v1/doctors/1" for ::1 at 2024-06-03 10:55:33 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DoctorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (1.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:15:in `find_doctor'
+Completed 200 OK in 60ms (Views: 2.3ms | ActiveRecord: 9.7ms | Allocations: 10233)
+
+
+Started GET "/api/v1/doctors/1" for ::1 at 2024-06-03 10:55:33 +0100
+Processing by DoctorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:15:in `find_doctor'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 750)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2024-06-03 10:55:35 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.8ms | Allocations: 1231)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2024-06-03 10:55:36 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.5ms | Allocations: 1144)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2024-06-03 10:57:25 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#index as */*
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (1.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 105ms (Views: 20.4ms | ActiveRecord: 26.0ms | Allocations: 17506)
+
+
+Started GET "/api/v1/appointments" for ::1 at 2024-06-03 10:57:25 +0100
+Processing by AppointmentsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/appointments_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 3.1ms | ActiveRecord: 0.8ms | Allocations: 2272)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2024-06-03 10:57:27 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 28ms (Views: 16.3ms | ActiveRecord: 5.0ms | Allocations: 5888)
+
+
+Started GET "/api/v1/doctors" for ::1 at 2024-06-03 10:57:27 +0100
+Processing by DoctorsController#index as */*
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/doctors_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.6ms | Allocations: 1160)
+
+
