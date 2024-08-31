@@ -3,7 +3,7 @@ class Doctor < ApplicationRecord
   has_many :users, through: :appointments
 
   # validations
-  validates_presence_of :name
+  validates_presence_of :name, uniqueness: true
   validates_presence_of :specialization
   validates_presence_of :experience
   validates_presence_of :image

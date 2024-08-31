@@ -59,3 +59,5 @@ gem 'net-smtp', require: false
 
 # gem 'net-pop', '~> 0.1.2'
 gem 'net-pop', require: false
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
