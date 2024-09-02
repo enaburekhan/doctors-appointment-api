@@ -5,24 +5,11 @@
 
 # Read more: https://github.com/cyu/rack-cors
 
-if Rails.env.production?
-  Rails.application.config.middleware.insert_before 0, Rack::Cors do
-    allow do
-      origins ENV.fetch('CORS_ORIGINS', '*')
-
-      resource '*',
-               headers: :any,
-               methods: [:get, :post, :put, :patch, :delete, :options, :head]
-    end
-  end
-else
-  Rails.application.config.middleware.insert_before 0, Rack::Cors do
-    allow do
-      origins '*'
-
-      resource '*',
-               headers: :any,
-               methods: [:get, :post, :put, :patch, :delete, :options, :head]
-    end
+config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins '*'
+    resource '*',
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
 end
