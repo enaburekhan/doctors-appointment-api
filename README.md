@@ -3,8 +3,8 @@ The doctors-appointment-api stores a list of expert doctors with their attribute
 
 ## Built With
 
-- Ruby v3.0.0
-- Ruby on Rails v6.1.3.1
+- Ruby v3.2.4
+- Ruby on Rails v7.0.4
 - JWT
 - rspec 5.0
 
@@ -19,7 +19,7 @@ The doctors-appointment-api stores a list of expert doctors with their attribute
 
 ## API endpoint 
 
-[doctors-appointment-api](https://agile-escarpment-87534.herokuapp.com/api/v1)
+[doctors-appointment-api](https://shrouded-basin-78103-5725827dde51.herokuapp.com/api/v1)
 
 ## Getting Started
 
@@ -76,7 +76,7 @@ Create a new project in heroku
 You can verify that the remote was added to your project by running:
 
  - git config --list | grep heroku 
- - git push heroku master 
+ - git push heroku main 
 
 ### Migrate your database
 
@@ -85,7 +85,7 @@ heroku run rails db:seed
 
 ### Tools used on this project
 - Visual Studio Code
-- Rubocop for Visual Studio Code
+- Rubocop from Visual Studio Code
 
 ## Author
 
